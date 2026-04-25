@@ -1,0 +1,182 @@
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="assets/video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  
+  <div class="container hero-content" @fadeUp>
+    <div class="hero-text-wrapper">
+      <app-badge-status type="gold">Boxe e Alta Performance</app-badge-status>
+      <h1 class="hero-name-badge">Thiago Saldanha</h1>
+      <div class="hero-support-line">Personal Trainer · Especialista em Boxe</div>
+      <h2 class="hero-title">
+        Transforme seu corpo e sua mente <br>
+        <span class="text-primary">com treinamento de elite</span>
+      </h2>
+      <p class="hero-subtitle">
+        Aulas de boxe e acompanhamento personalizado para você alcançar resultados reais e superar seus limites.
+      </p>
+      <div class="hero-cta">
+        <a href="https://wa.me/5521999291477?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula." target="_blank" class="btn">Agendar Aula Agora</a>
+        <button class="btn btn-outline" (click)="scrollToServices()">Conheça os Serviços</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="mouse"></div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="sobre" class="about">
+  <div class="container grid-two-cols">
+    <div class="about-image-wrapper" @fadeUp>
+      <div class="image-deco deco-1"></div>
+      <div class="image-deco deco-2"></div>
+      <div class="main-image">
+        <img src="assets/eu.png" alt="Thiago Saldanha">
+      </div>
+    </div>
+    
+    <div class="about-text" @fadeUp>
+      <app-badge-status type="danger">SOBRE</app-badge-status>
+      <h2 class="section-title">Conheça o Thiago Saldanha</h2>
+      <p class="section-description">
+        Sou profissional de Educação Física com especialização em treinamento funcional e mestre na arte do boxe com paixão por ajudar pessoas a alcançarem seu melhor potencial. Minha abordagem integra treinamento de alta performance e a disciplina do boxe, criando planos únicos que respeitam a sua rotina, objetivos e individualidade biológica.
+      </p>
+      
+      <div class="about-credentials">
+        <strong>Thiago Saldanha - Personal Trainer e Boxe</strong><br>
+        <span class="text-muted">CREF 012345-G/RJ</span>
+      </div>
+      
+      <div class="stats-row" @staggerFade>
+        <div class="stat-card stagger-item">
+          <span class="stat-number-small">CREF 012345-G</span>
+          <span class="stat-label">Registro Profissional</span>
+        </div>
+        <div class="stat-card stagger-item">
+          <span class="stat-number-small">Especialista</span>
+          <span class="stat-label">Alta Performance e Boxe</span>
+        </div>
+        <div class="stat-card stagger-item">
+          <span class="stat-number-small">Atendimento</span>
+          <span class="stat-label">Personalizado e Focado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="servicos" class="services">
+  <div class="container">
+    <div class="section-header center" @fadeUp>
+      <app-badge-status type="danger">SERVIÇOS</app-badge-status>
+      <h2 class="section-title">Como posso te ajudar</h2>
+      <p class="section-subtitle">Treinamentos personalizados para diferentes objetivos e níveis.</p>
+    </div>
+    
+    <div class="services-grid" @staggerFade>
+      <div class="service-card stagger-item">
+        <div class="service-icon">🥊</div>
+        <h3>Aulas de Boxe</h3>
+        <p>Técnica, agilidade e queima calórica intensa. Aprenda do zero ou aperfeiçoe sua técnica com um especialista.</p>
+        <ul class="service-list">
+          <li>Fundamentos básicos</li>
+          <li>Treino de manoplas</li>
+          <li>Condicionamento de luta</li>
+        </ul>
+      </div>
+      
+      <div class="service-card active stagger-item">
+        <div class="service-icon">🏋️</div>
+        <h3>Personal Trainer</h3>
+        <p>Acompanhamento individualizado e treinos específicos para seus objetivos, seja emagrecimento ou hipertrofia.</p>
+        <ul class="service-list">
+          <li>Avaliação física</li>
+          <li>Plano de treino mensal</li>
+          <li>Correção postural</li>
+        </ul>
+        <span class="popular-badge">Mais Procurado</span>
+      </div>
+      
+      <div class="service-card stagger-item">
+        <div class="service-icon">📊</div>
+        <h3>Consultoria Online</h3>
+        <p>Treine de onde estiver com um planejamento sob medida e suporte constante para manter o foco.</p>
+        <ul class="service-list">
+          <li>App exclusivo</li>
+          <li>Suporte via WhatsApp</li>
+          <li>Vídeos explicativos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contato" class="contact">
+  <div class="container">
+    <div class="section-header center" @fadeUp>
+      <app-badge-status type="danger">CONTATO</app-badge-status>
+      <h2 class="section-title">Fale comigo</h2>
+      <p class="section-subtitle">Agende sua aula experimental ou tire suas dúvidas pelo canal que preferir.</p>
+    </div>
+
+    <div class="contact-wrapper" @fadeUp>
+      <div class="contact-info">
+        <div class="contact-links-vertical">
+          <a href="https://wa.me/5521999291477?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula." target="_blank" class="contact-block">
+            <div class="icon-box">💬</div>
+            <div class="info-texts">
+              <span class="info-label">WHATSAPP</span>
+              <span class="info-value">(21) 99929-1477</span>
+            </div>
+          </a>
+          <a href="tel:+5521999291477" class="contact-block">
+            <div class="icon-box">📞</div>
+            <div class="info-texts">
+              <span class="info-label">TELEFONE</span>
+              <span class="info-value">(21) 99929-1477</span>
+            </div>
+          </a>
+          <a href="https://instagram.com/thiagosaldanha.boxe" target="_blank" class="contact-block">
+            <div class="icon-box">📸</div>
+            <div class="info-texts">
+              <span class="info-label">INSTAGRAM</span>
+              <span class="info-value">&#64;thiagosaldanha.boxe</span>
+            </div>
+          </a>
+          <a href="https://maps.google.com" target="_blank" class="contact-block">
+            <div class="icon-box">📍</div>
+            <div class="info-texts">
+              <span class="info-label">ENDEREÇO</span>
+              <span class="info-value">Centro, Rio de Janeiro - RJ</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-form-card">
+        <form class="contact-form" (submit)="sendWhatsApp($event)">
+          <div class="form-group">
+            <label>NOME</label>
+            <input type="text" id="wa-nome" placeholder="Seu nome completo" required>
+          </div>
+          <div class="form-group">
+            <label>E-MAIL</label>
+            <input type="email" id="wa-email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>MENSAGEM</label>
+            <textarea id="wa-mensagem" rows="4" placeholder="Como posso te ajudar?" required></textarea>
+          </div>
+          <button type="submit" class="btn w-full btn-gold">Enviar via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
