@@ -70,19 +70,19 @@ const Footer = () => (
               <span className="truncate">personal.saldanha@gmail.com</span>
             </a>
             <a href="https://wa.me/5521969886804" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors flex-shrink-0">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors">
                 <MessageCircle size={13} />
               </div>
               WhatsApp
             </a>
             <a href="https://instagram.com/personal.saldanha" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors flex-shrink-0">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors">
                 <Instagram size={13} />
               </div>
               <span className="truncate">@personal.saldanha</span>
             </a>
             <a href="https://app.personalsaldanha.com.br/login" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors flex-shrink-0">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors">
                 <MonitorPlay size={13} />
               </div>
               <span className="truncate">Plataforma do Aluno</span>
