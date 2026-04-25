@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { MessageCircle, ChevronDown } from "lucide-react";
-import logo from "@/assets/logo_text.png";
 import videoBg from "@/assets/video.mp4";
 
 const WHATSAPP_URL = "https://wa.me/5521969886804?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20consultorias%20e%20treinos.";
@@ -27,27 +26,7 @@ const HeroSection = () => (
       />
     </div>
 
-    {/* Logo — top right, md+ only */}
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="absolute top-24 right-8 lg:right-16 z-10 hidden md:block"
-    >
-      <img src={logo} alt="Thiago Saldanha" className="h-40 lg:h-52 object-contain brightness-0 invert opacity-90" />
-    </motion.div>
-
     <div className="container relative z-10 mx-auto px-4 lg:px-8 pt-20 pb-14">
-      {/* Logo — mobile only, centered in empty space above content */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex justify-center mb-8 sm:hidden"
-      >
-        <img src={logo} alt="Thiago Saldanha" className="h-48 object-contain brightness-0 invert" />
-      </motion.div>
-
       <div className="max-w-2xl">
         <motion.span
           initial={{ opacity: 0, y: 20 }}

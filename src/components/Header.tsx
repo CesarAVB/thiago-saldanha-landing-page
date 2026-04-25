@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
 import logo from "@/assets/logo_text.png";
 import logoIcon from "@/assets/logo_icon.png";
 
@@ -34,7 +35,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-xl border-b border-white/10 h-16" : "bg-transparent h-20"
+        scrolled ? "bg-background/80 backdrop-blur-xl h-16" : "bg-transparent h-20"
       }`}
     >
       {/* Scroll Progress Bar */}
@@ -50,17 +51,22 @@ const Header = () => {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="relative text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors group"
-            >
-              {l.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-            </a>
-          ))}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="flex items-center gap-6 lg:gap-8">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="relative text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors group"
+              >
+                {l.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+              </a>
+            ))}
+          </div>
+
+          <Separator orientation="vertical" className="h-6 bg-white/10" />
+
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -81,6 +87,9 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Horizontal Separator at the bottom of the header */}
+      <Separator className="absolute bottom-0 left-0 right-0 bg-white/10" />
+
       {/* Mobile nav */}
       <AnimatePresence>
         {open && (
@@ -96,16 +105,19 @@ const Header = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="py-4 text-lg font-heading font-bold text-foreground/80 hover:text-primary transition-colors border-b border-white/5 last:border-0"
+                  className="py-4 text-lg font-heading font-bold text-foreground/80 hover:text-primary transition-colors"
                 >
                   {l.label}
                 </a>
               ))}
+
+              <Separator className="my-2 bg-white/10" />
+
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-4 rounded-xl shadow-lg shadow-primary/20"
+                className="mt-4 flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-4 rounded-xl shadow-lg shadow-primary/20"
               >
                 <MessageCircle size={20} />
                 Agendar Treino

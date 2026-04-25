@@ -76,7 +76,7 @@ const ContactSection = () => {
         </div>
 
         {/* Contact cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
           {contactCards.map(({ icon: Icon, label, value, href, external }, i) => (
             <motion.a
               key={label}
@@ -86,15 +86,15 @@ const ContactSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="glass-dark border border-white/5 hover:border-primary/30 rounded-3xl px-6 py-5 transition-all duration-300 group flex items-center gap-4"
+              transition={{ delay: i * 0.08 }}
+              className="flex items-center gap-4 bg-background border border-border hover:border-primary/50 rounded-2xl px-5 py-4 transition-all duration-200 hover:shadow-md group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                <Icon size={20} className="text-primary" />
+              <div className="w-10 h-10 rounded-xl border border-primary/30 bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                <Icon size={18} className="text-primary group-hover:text-primary/80 transition-colors" />
               </div>
               <div className="min-w-0">
-                <p className="font-bold text-foreground text-[10px] uppercase tracking-widest leading-none mb-1.5 opacity-50">{label}</p>
-                <p className="text-foreground/80 text-xs font-medium truncate">{value}</p>
+                <p className="font-semibold text-foreground text-xs uppercase tracking-wide leading-none mb-1.5">{label}</p>
+                <p className="text-muted-foreground text-xs truncate">{value}</p>
               </div>
             </motion.a>
           ))}

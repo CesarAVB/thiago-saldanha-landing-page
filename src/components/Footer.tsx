@@ -10,43 +10,48 @@ const navLinks = [
 ];
 
 const Footer = () => (
-  <footer className="bg-black text-card-foreground border-t border-white/5 relative overflow-hidden">
-    {/* Decorative blobs */}
-    <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-    <div className="absolute bottom-0 -left-24 w-96 h-96 bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
+  <footer className="bg-card text-card-foreground border-t border-border relative overflow-hidden">
 
-    <div className="container relative z-10 mx-auto px-4 lg:px-8 pt-20 pb-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-        {/* Brand */}
-        <div className="col-span-1 lg:col-span-1 flex flex-col items-center md:items-start">
-          <div className="flex items-center gap-4 mb-8">
-            <img src={logoIcon} alt="" className="h-12 object-contain" />
-            <img src={logo} alt="Thiago Saldanha" className="h-10 object-contain brightness-0 invert" />
+    {/* Decorative top divider */}
+    <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-40" />
+
+    {/* Decorative blobs */}
+    <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="absolute bottom-0 -left-24 w-72 h-72 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+
+    <div className="container relative z-10 mx-auto px-4 lg:px-8 pt-10 pb-5 md:pt-16 md:pb-8">
+
+      {/* Main grid: 2 cols mobile | 4 cols md+ | Address drops on md */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-8 md:gap-10 mb-8 md:mb-12">
+
+        {/* Brand — full width on mobile, 2 cols on md, 1 col on lg */}
+        <div className="col-span-2 md:col-span-2 lg:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="flex items-center gap-4 mb-3 md:mb-5">
+            <img src={logoIcon} alt="" className="h-16 md:h-20 object-contain brightness-0 invert" />
+            <img src={logo} alt="Thiago Saldanha" className="h-14 md:h-20 object-contain brightness-0 invert" />
           </div>
-          <p className="text-foreground/50 text-sm leading-relaxed mb-8 max-w-xs text-center md:text-left">
-            Especialista em transformação física através da musculação e boxe técnico. Treinamento de alta performance para todos.
+          <p className="text-foreground/70 text-xs md:text-sm leading-relaxed mb-3 md:mb-4 max-w-xs">
+            Profissional de Educação Física, Personal Trainer e Treinador de Boxe comprometido com os seus resultados.
           </p>
-          <div className="flex gap-4">
-            <a href="https://instagram.com/personal.saldanha" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
-              <Instagram size={20} />
-            </a>
-            <a href="https://wa.me/5521969886804" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
-              <MessageCircle size={20} />
-            </a>
-          </div>
+          <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full border border-primary/20">
+            CREF / FPERJ
+          </span>
         </div>
 
-        {/* Quick Links */}
-        <div className="flex flex-col items-center md:items-start">
-          <h4 className="font-heading font-bold text-lg uppercase tracking-widest text-foreground mb-8">Navegação</h4>
-          <ul className="space-y-4">
+        {/* Separator — between Brand and Nav/Contact (mobile only) */}
+        <div className="col-span-2 md:hidden h-px bg-border/50" />
+
+        {/* Nav */}
+        <div>
+          <h4 className="font-heading font-semibold text-xs uppercase tracking-widest text-muted-foreground mb-3 md:mb-5">Navegação</h4>
+          <ul className="space-y-2 md:space-y-3">
             {navLinks.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="text-sm text-foreground/50 hover:text-primary transition-colors flex items-center gap-3 group"
+                  className="text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 group"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/20 group-hover:bg-primary transition-all" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors flex-shrink-0" />
                   {l.label}
                 </a>
               </li>
@@ -54,51 +59,74 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Contact info */}
-        <div className="flex flex-col items-center md:items-start">
-          <h4 className="font-heading font-bold text-lg uppercase tracking-widest text-foreground mb-8">Contato</h4>
-          <div className="space-y-4">
-            <a href="tel:+5521969886804" className="flex items-center gap-4 text-sm text-foreground/50 hover:text-primary transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-all">
-                <Phone size={18} />
+        {/* Contact */}
+        <div>
+          <h4 className="font-heading font-semibold text-xs uppercase tracking-widest text-muted-foreground mb-3 md:mb-5">Contato</h4>
+          <div className="space-y-2 md:space-y-3">
+            <a href="tel:+5521969886804" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center transition-colors flex-shrink-0">
+                <Phone size={13} />
               </div>
-              <span>(21) 96988-6804</span>
+              <span className="truncate">(21) 96988-6804</span>
             </a>
-            <a href="https://app.personalsaldanha.com.br/login" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-sm text-foreground/50 hover:text-primary transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-all">
-                <MonitorPlay size={18} />
+            <a href="https://wa.me/5521969886804" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors flex-shrink-0">
+                <MessageCircle size={13} />
               </div>
-              <span>Plataforma do Aluno</span>
+              WhatsApp
+            </a>
+            <a href="https://instagram.com/personal.saldanha" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors flex-shrink-0">
+                <Instagram size={13} />
+              </div>
+              <span className="truncate">@personal.saldanha</span>
+            </a>
+            <a href="https://app.personalsaldanha.com.br/login" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors flex-shrink-0">
+                <MonitorPlay size={13} />
+              </div>
+              <span className="truncate">Plataforma do Aluno</span>
             </a>
           </div>
         </div>
 
-        {/* Location */}
-        <div className="flex flex-col items-center md:items-start">
-          <h4 className="font-heading font-bold text-lg uppercase tracking-widest text-foreground mb-8">Atendimento</h4>
-          <div className="flex items-start gap-4 text-sm text-foreground/50">
-            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0">
-              <MapPin size={18} />
+        {/* Separator — before Address (mobile + md, hidden on lg) */}
+        <div className="col-span-2 md:col-span-4 lg:hidden h-px bg-border/50" />
+
+        {/* Address — full width on mobile/md centered, col 4 on lg */}
+        <div className="col-span-2 md:col-span-4 lg:col-span-1 flex flex-col items-center text-center lg:items-start lg:text-left">
+          <h4 className="font-heading font-semibold text-xs uppercase tracking-widest text-muted-foreground mb-3 md:mb-5">Atendimento</h4>
+          <a
+            href="#servicos"
+            className="group flex items-start gap-3 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors"
+          >
+            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors mt-0.5">
+              <MapPin size={13} />
             </div>
-            <p className="leading-relaxed">
+            <span className="leading-relaxed text-left">
               Rio de Janeiro - RJ<br />
               Presencial & Consultoria Online
-            </p>
-          </div>
+            </span>
+          </a>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-xs text-foreground/30 font-medium">
-          © {new Date().getFullYear()} Thiago Saldanha. Desenvolvido com foco em resultados.
+      <div className="border-t border-border pt-4 md:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
+        <p>© {new Date().getFullYear()} Thiago Saldanha — Todos os direitos reservados.</p>
+        <p>
+          Desenvolvido por{" "}
+          <a 
+            href="https://portfolio.cesaraugusto.dev.br/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-bold hover:text-primary transition-colors"
+          >
+            César Augusto
+          </a>
         </p>
-        <div className="flex items-center gap-6 text-[10px] uppercase tracking-widest font-bold text-foreground/20">
-          <span>CREF / FPERJ</span>
-          <span className="w-1 h-1 rounded-full bg-white/10" />
-          <span>Educação Física</span>
-        </div>
       </div>
+
     </div>
   </footer>
 );
