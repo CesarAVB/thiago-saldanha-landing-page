@@ -3,18 +3,33 @@ import { Award, GraduationCap, Heart } from "lucide-react";
 import fotoPerfil from "@/assets/perfil1.jpeg";
 
 const stats = [
-  { icon: Award, label: "FPERJ", sub: "Treinador de Boxe Registrado" },
-  { icon: GraduationCap, label: "Especialista", sub: "Educação Física e Personal Fight" },
-  { icon: Heart, label: "Atendimento", sub: "Treinos Personalizados" },
+  { 
+    icon: Award, 
+    label: "FPERJ", 
+    sub: "Treinador de Boxe Registrado",
+    detail: "Certificação oficial pela Federação de Boxe do Estado do Rio de Janeiro."
+  },
+  { 
+    icon: GraduationCap, 
+    label: "Especialista", 
+    sub: "Educação Física e Personal Fight",
+    detail: "Especialização focada em alta performance e metodologia de combate."
+  },
+  { 
+    icon: Heart, 
+    label: "Atendimento", 
+    sub: "Treinos Personalizados",
+    detail: "Foco total na individualidade biológica e objetivos específicos de cada aluno."
+  },
 ];
 
 const AboutSection = () => (
-  <section id="sobre" className="py-20 lg:py-32 relative overflow-hidden">
+  <section id="sobre" className="py-24 lg:py-36 relative overflow-hidden">
     {/* Decorative background element */}
     <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
     <div className="container mx-auto px-4 lg:px-8">
-      <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+      <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
         {/* Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -34,11 +49,9 @@ const AboutSection = () => (
                 alt="Thiago Saldanha - Personal Trainer"
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
               />
-              {/* Overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               <div className="absolute inset-0 border-[8px] border-background/50 rounded-[2rem]" />
               
-              {/* Badge */}
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 glass px-6 py-2 rounded-full shadow-xl border-primary/30">
                 <span className="text-primary font-heading font-bold tracking-widest text-sm">CREF / FPERJ</span>
               </div>
@@ -53,10 +66,10 @@ const AboutSection = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-secondary font-bold text-sm uppercase tracking-[0.3em] mb-4">
+            <span className="inline-block text-secondary font-bold text-sm uppercase tracking-[0.4em] mb-4">
               Trajetória Profissional
             </span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-8 leading-tight uppercase">
               Transformando vidas através do <span className="text-primary">movimento</span>
             </h2>
             <div className="space-y-6 text-foreground/70 text-lg leading-relaxed">
@@ -68,8 +81,7 @@ const AboutSection = () => (
               </p>
             </div>
 
-            {/* Signature or highlight */}
-            <div className="mt-10 p-6 glass rounded-2xl border-l-4 border-l-primary">
+            <div className="mt-10 p-6 glass rounded-2xl border-l-4 border-l-primary shadow-xl">
               <p className="italic text-foreground/90 font-medium">
                 "Não é apenas sobre estética, é sobre performance, saúde e longevidade."
               </p>
@@ -78,8 +90,8 @@ const AboutSection = () => (
         </div>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Stats Cards - REIMAGINED STYLE */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
@@ -87,13 +99,26 @@ const AboutSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="bg-zinc-900/80 backdrop-blur-sm group p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            className="relative group"
           >
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500">
-              <s.icon size={28} className="text-primary" />
+            {/* Background glass element */}
+            <div className="absolute inset-0 bg-zinc-900/50 backdrop-blur-md rounded-[2.5rem] border border-white/5 transition-all duration-500 group-hover:border-primary/40 group-hover:bg-zinc-900/80" />
+            
+            <div className="relative p-10 flex flex-col h-full">
+              {/* Icon with distinct style */}
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center mb-8 shadow-lg shadow-primary/20 transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-6">
+                <s.icon size={30} className="text-white" />
+              </div>
+              
+              <div className="mb-4">
+                <h3 className="font-heading font-bold text-2xl text-foreground mb-1 tracking-wider uppercase">{s.label}</h3>
+                <p className="text-primary font-bold text-sm tracking-wide">{s.sub}</p>
+              </div>
+              
+              <p className="text-foreground/50 text-sm leading-relaxed mt-auto">
+                {s.detail}
+              </p>
             </div>
-            <h3 className="font-heading font-bold text-xl text-foreground mb-2 tracking-wide">{s.label}</h3>
-            <p className="text-foreground/50 text-sm leading-relaxed">{s.sub}</p>
           </motion.div>
         ))}
       </div>
