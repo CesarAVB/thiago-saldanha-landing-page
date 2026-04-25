@@ -87,18 +87,18 @@ const HeroSection = () => (
     </div>
 
     {/* Scroll indicator */}
-    <motion.a
-      href="#sobre"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1.2 }}
-      className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/40 hover:text-primary transition-colors animate-bounce"
-    >
-      <div className="flex flex-col items-center gap-2">
-        <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll</span>
+    <div className="absolute bottom-6 md:bottom-10 inset-x-0 flex justify-center pointer-events-none">
+      <motion.a
+        href="#sobre"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="flex flex-col items-center gap-2 text-foreground/40 hover:text-primary transition-colors animate-bounce pointer-events-auto"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] font-bold mr-[-0.2em]">Scroll</span>
         <ChevronDown size={24} />
-      </div>
-    </motion.a>
+      </motion.a>
+    </div>
   </section>
 );
 

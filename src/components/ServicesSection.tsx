@@ -40,7 +40,7 @@ const ServicesSection = () => (
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-secondary font-bold text-sm uppercase tracking-[0.4em]"
+          className="text-secondary font-bold text-sm uppercase tracking-[0.4em] mr-[-0.4em]"
         >
           Metodologia
         </motion.span>

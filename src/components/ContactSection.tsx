@@ -60,7 +60,7 @@ const ContactSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-secondary font-bold text-sm uppercase tracking-[0.4em]"
+            className="text-secondary font-bold text-sm uppercase tracking-[0.4em] mr-[-0.4em]"
           >
             Networking
           </motion.span>
@@ -135,13 +135,13 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="relative p-1 bg-gradient-to-br from-primary/30 to-secondary/10 rounded-[3rem]">
-              <div className="bg-zinc-950 rounded-[2.9rem] p-10 md:p-14 shadow-2xl">
-                <div className="mb-10">
-                  <h3 className="text-3xl font-heading font-bold text-foreground mb-4 uppercase tracking-wider">
+            <div className="relative p-1 bg-gradient-to-br from-primary/30 to-secondary/10 rounded-[2.5rem] md:rounded-[3rem]">
+              <div className="bg-zinc-950 rounded-[2.4rem] md:rounded-[2.9rem] p-6 sm:p-10 md:p-14 shadow-2xl">
+                <div className="mb-8 md:mb-10">
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4 uppercase tracking-wider">
                     Solicite sua <span className="text-gradient-red">Consultoria</span>
                   </h3>
-                  <p className="text-foreground/50 text-base leading-relaxed">
+                  <p className="text-foreground/50 text-sm md:text-base leading-relaxed">
                     Preencha os dados abaixo e eu entrarei em contato diretamente pelo seu WhatsApp para alinharmos seus objetivos.
                   </p>
                 </div>
@@ -152,23 +152,23 @@ const ContactSection = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex flex-col items-center justify-center text-center py-10 gap-6"
                   >
-                    <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Send size={40} className="text-primary animate-pulse" />
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Send size={32} className="text-primary animate-pulse md:size-[40px]" />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-2xl text-foreground mb-2">Mensagem Enviada!</h4>
-                      <p className="text-foreground/50">Redirecionando para o WhatsApp...</p>
+                      <h4 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-2">Mensagem Enviada!</h4>
+                      <p className="text-foreground/50 text-sm md:text-base">Redirecionando para o WhatsApp...</p>
                     </div>
                     <button
                       onClick={() => setSent(false)}
-                      className="text-primary font-bold hover:underline underline-offset-8"
+                      className="text-primary font-bold hover:underline underline-offset-8 text-sm md:text-base"
                     >
                       Enviar novo formulário
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="grid md:grid-cols-2 gap-8">
+                  <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                       <div className="space-y-3">
                         <label className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] ml-1">Nome</label>
                         <input
@@ -176,7 +176,7 @@ const ContactSection = () => {
                           required
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300"
+                          className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-3 md:py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300"
                           placeholder="Ex: João Silva"
                         />
                       </div>
@@ -187,7 +187,7 @@ const ContactSection = () => {
                           required
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
-                          className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300"
+                          className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-3 md:py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300"
                           placeholder="Ex: joao@email.com"
                         />
                       </div>
@@ -199,18 +199,18 @@ const ContactSection = () => {
                         rows={3}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300 resize-none"
+                        className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-3 md:py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300 resize-none"
                         placeholder="Conte brevemente seu objetivo..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="group relative w-full flex items-center justify-center gap-4 bg-primary text-white font-bold py-6 rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-95 shadow-[0_20px_40px_-15px_rgba(var(--primary),0.5)]"
+                      className="group relative w-full flex items-center justify-center gap-3 md:gap-4 bg-primary text-white font-bold py-4 md:py-6 rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-95 shadow-[0_20px_40px_-15px_rgba(var(--primary),0.5)]"
                     >
                       <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                      <MessageCircle size={22} className="relative z-10" />
-                      <span className="relative z-10 text-lg uppercase tracking-widest">Iniciar Transformação</span>
+                      <MessageCircle size={20} className="relative z-10 md:size-[22px]" />
+                      <span className="relative z-10 text-base md:text-lg uppercase tracking-wider md:tracking-widest">Iniciar Transformação</span>
                     </button>
                   </form>
                 )}

@@ -66,7 +66,7 @@ const AboutSection = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-secondary font-bold text-sm uppercase tracking-[0.4em] mb-4">
+            <span className="inline-block text-secondary font-bold text-sm uppercase tracking-[0.4em] mb-4 mr-[-0.4em]">
               Trajetória Profissional
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-8 leading-tight uppercase">
