@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, MonitorPlay } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import logo from "@/assets/logo_text.png";
@@ -13,6 +13,7 @@ const navLinks = [
 ];
 
 const WHATSAPP_URL = "https://wa.me/5521969886804?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20consultorias%20e%20treinos.";
+const LOGIN_URL = "https://app.personalsaldanha.com.br/login";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -51,8 +52,8 @@ const Header = () => {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-          <div className="flex items-center gap-6 lg:gap-8">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6">
+          <div className="flex items-center gap-4 lg:gap-6">
             {navLinks.map((l) => (
               <a
                 key={l.href}
@@ -67,15 +68,27 @@ const Header = () => {
 
           <Separator orientation="vertical" className="h-6 bg-white/10" />
 
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-2.5 rounded-full hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_rgba(var(--primary),0.4)] active:scale-95"
-          >
-            <MessageCircle size={18} />
-            Agendar Treino
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={LOGIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-foreground font-bold text-xs lg:text-sm px-4 lg:px-5 py-2 rounded-full hover:bg-white/10 transition-all active:scale-95"
+            >
+              <MonitorPlay size={16} />
+              Acessar Plataforma
+            </a>
+
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-xs lg:text-sm px-4 lg:px-5 py-2 rounded-full hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_rgba(var(--primary),0.4)] active:scale-95"
+            >
+              <MessageCircle size={16} />
+              Agendar Treino
+            </a>
+          </div>
         </nav>
 
         {/* Mobile toggle */}
@@ -113,15 +126,27 @@ const Header = () => {
 
               <Separator className="my-2 bg-white/10" />
 
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-4 rounded-xl shadow-lg shadow-primary/20"
-              >
-                <MessageCircle size={20} />
-                Agendar Treino
-              </a>
+              <div className="grid grid-cols-1 gap-3 mt-4">
+                <a
+                  href={LOGIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-foreground font-bold py-4 rounded-xl"
+                >
+                  <MonitorPlay size={20} />
+                  Acessar Plataforma
+                </a>
+
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-4 rounded-xl shadow-lg shadow-primary/20"
+                >
+                  <MessageCircle size={20} />
+                  Agendar Treino
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

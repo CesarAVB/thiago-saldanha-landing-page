@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, Instagram, MessageCircle, Send } from "lucide-react";
+import { Mail, MapPin, Instagram, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 import imgContato from "@/assets/perfil2.jpeg";
 
@@ -14,10 +14,10 @@ const contactCards = [
     external: true,
   },
   {
-    icon: Phone,
-    label: "Telefone",
-    value: "(21) 96988-6804",
-    href: "tel:+5521969886804",
+    icon: Mail,
+    label: "E-mail",
+    value: "saldanha.work@gmail.com",
+    href: "mailto:saldanha.work@gmail.com",
     external: false,
   },
   {
