@@ -33,6 +33,36 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [tapCount, setTapCount] = useState(0);
+
+  const triggerEasterEgg = () => {
+    // Boxing Bell Sound
+    const bell = new Audio("https://www.myinstants.com/media/sounds/boxing-bell.mp3");
+    // Rocky Theme Snippet (Gonna Fly Now)
+    const rocky = new Audio("https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Gonna+Fly+Now&filename=mt/MTI5MTY1ODgxMjkxNjg3_f_2f_2bWq_2b_2bcU6_2bE.mp3");
+    
+    bell.play();
+    setTimeout(() => {
+      rocky.play();
+      rocky.volume = 0.5;
+    }, 500);
+
+    // Visual feedback - temporary "frenzy" effect could be added here
+    console.log("🥊 MODO ROCKY ATIVADO!");
+  };
+
+  const handleLogoClick = () => {
+    const newCount = tapCount + 1;
+    if (newCount === 3) {
+      triggerEasterEgg();
+      setTapCount(0);
+    } else {
+      setTapCount(newCount);
+      // Reset count after 1 second of inactivity
+      setTimeout(() => setTapCount(0), 1000);
+    }
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -46,10 +76,18 @@ const Header = () => {
       />
 
       <div className="container mx-auto h-full flex items-center justify-between px-4 lg:px-8">
-        <a href="#inicio" className="flex items-center gap-3 group">
-          <img src={logoIcon} alt="" className="h-8 md:h-10 object-contain transition-transform group-hover:scale-110" />
+        <div 
+          onClick={handleLogoClick}
+          className="flex items-center gap-3 group cursor-pointer select-none active:scale-95 transition-transform"
+        >
+          <motion.img 
+            animate={tapCount > 0 ? { rotate: [0, -10, 10, 0] } : {}}
+            src={logoIcon} 
+            alt="" 
+            className="h-8 md:h-10 object-contain transition-transform group-hover:scale-110" 
+          />
           <img src={logo} alt="Thiago Saldanha" className="h-8 md:h-10 object-contain brightness-0 invert" />
-        </a>
+        </div>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-4 lg:gap-6">
