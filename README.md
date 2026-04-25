@@ -1,38 +1,79 @@
-# Thiago Saldanha - Landing Page
+# Thiago Saldanha · Personal Trainer & Treinador de Boxe — Landing Page
 
-Esta é a landing page oficial do Thiago Saldanha, Profissional de Educação Física e Professor de Boxe.
+Landing page profissional desenvolvida para o **Thiago Saldanha**, profissional de Educação Física, Personal Trainer e Treinador de Boxe (FPERJ). O objetivo é apresentar seus serviços, perfil profissional e facilitar o contato de novos clientes via WhatsApp.
 
-## Tecnologias Utilizadas
+---
 
-- **Angular 18+**: Framework principal.
-- **Standalone Components**: Arquitetura moderna sem módulos.
-- **Vanilla CSS**: Estilização customizada seguindo a identidade visual.
-- **TypeScript**: Tipagem estática e lógica de negócio.
+## Seções
 
-## Estrutura do Projeto
+| Seção | Descrição |
+|---|---|
+| **Cabeçalho** | Navegação fixa com links âncora para cada seção e ícone de marca |
+| **Início** | Apresentação principal com vídeo de fundo e CTA para WhatsApp |
+| **Sobre** | Perfil profissional e experiência em musculação e boxe |
+| **Serviços** | Consultoria Online, Personal Trainer Presencial e Treinamento de Boxe |
+| **Contato** | Informações de contato direto e formulário integrado |
+| **Rodapé** | Informações institucionais e links rápidos |
 
-- `src/app/components`: Componentes compartilhados (Navbar, Footer, Alert, etc).
-- `src/app/pages`: Páginas da aplicação (Home).
-- `src/app/services`: Serviços globais (Loading, Alert).
-- `src/assets`: Recursos estáticos (Vídeo, Imagens, Logos, PDF).
+---
 
-## Como Executar
+## Tecnologias
 
-1. Instale as dependências:
-   ```bash
-   npm install
-   ```
+| Ferramenta | Versão |
+|---|---|
+| [React](https://react.dev) | 18 |
+| [TypeScript](https://www.typescriptlang.org) | 5 |
+| [Vite](https://vitejs.dev) | 5 |
+| [Tailwind CSS](https://tailwindcss.com) | 3 |
+| [shadcn/ui](https://ui.shadcn.com) |  |
+| [Framer Motion](https://www.framer.com/motion) | 12 |
+| [Lucide React](https://lucide.dev) | |
 
-2. Inicie o servidor de desenvolvimento:
-   ```bash
-   npm start
-   ```
+---
 
-3. Acesse `http://localhost:4200` no seu navegador.
+## Pré-requisitos
 
-## Identidade Visual
+- [Node.js](https://nodejs.org) 18 ou superior
+- [Bun](https://bun.sh) (Recomendado) ou npm
 
-- **Fundo**: #0a0a0a
-- **Primária (Vermelho)**: #c0392b
-- **Acento (Dourado)**: #d4af37
-- **Fontes**: Bebas Neue (Títulos) e Barlow (Corpo).
+---
+
+## Como rodar localmente
+
+```sh
+# 1. Clone o repositório
+git clone https://github.com/Guto/landing-page-thiago.git
+cd landing-page-thiago
+
+# 2. Instale as dependências
+bun install
+
+# 3. Inicie o servidor de desenvolvimento
+bun run dev
+```
+
+---
+
+## Estrutura do projeto
+
+```
+src/
+ assets/                 # Imagens, logos e vídeo de fundo
+ components/
+    Header.tsx          # Cabeçalho com navegação
+    HeroSection.tsx     # Seção inicial com vídeo
+    AboutSection.tsx    # Seção sobre o profissional
+    ServicesSection.tsx # Seção de serviços
+    ContactSection.tsx  # Formulário de contato
+    Footer.tsx          # Rodapé
+    ui/                 # Componentes base do shadcn/ui
+ hooks/                  # Hooks personalizados
+ lib/                    # Utilitários (ex: cn)
+ pages/                  # Páginas da aplicação
+```
+
+---
+
+## Licença
+
+Projeto de uso privado. Todos os direitos reservados.
