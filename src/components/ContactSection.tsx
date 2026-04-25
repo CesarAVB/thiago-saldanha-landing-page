@@ -48,20 +48,20 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contato" className="py-20 lg:py-28 bg-muted relative overflow-hidden">
+    <section id="contato" className="py-24 lg:py-36 relative overflow-hidden">
       {/* Decorative blobs */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-primary font-semibold text-sm uppercase tracking-widest"
+            className="text-secondary font-bold text-sm uppercase tracking-[0.4em]"
           >
             Contato
           </motion.span>
@@ -69,23 +69,14 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-3"
+            className="text-4xl md:text-5xl font-heading font-bold text-foreground mt-4"
           >
-            Fale comigo
+            Vamos começar sua <span className="text-primary">jornada</span>?
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-muted-foreground mt-3 text-base max-w-md mx-auto"
-          >
-            Agende seu treino ou tire suas dúvidas sobre a consultoria online.
-          </motion.p>
         </div>
 
         {/* Contact cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {contactCards.map(({ icon: Icon, label, value, href, external }, i) => (
             <motion.a
               key={label}
@@ -95,35 +86,41 @@ const ContactSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="flex items-center gap-4 bg-background border border-border hover:border-primary/50 rounded-2xl px-5 py-4 transition-all duration-200 hover:shadow-md group"
+              transition={{ delay: i * 0.05 }}
+              className="glass-dark border border-white/5 hover:border-primary/30 rounded-3xl px-6 py-5 transition-all duration-300 group flex items-center gap-4"
             >
-              <div className="w-10 h-10 rounded-xl border border-primary/30 bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                <Icon size={18} className="text-primary group-hover:text-primary/80 transition-colors" />
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                <Icon size={20} className="text-primary" />
               </div>
               <div className="min-w-0">
-                <p className="font-semibold text-foreground text-xs uppercase tracking-wide leading-none mb-1.5">{label}</p>
-                <p className="text-muted-foreground text-xs truncate">{value}</p>
+                <p className="font-bold text-foreground text-[10px] uppercase tracking-widest leading-none mb-1.5 opacity-50">{label}</p>
+                <p className="text-foreground/80 text-xs font-medium truncate">{value}</p>
               </div>
             </motion.a>
           ))}
         </div>
 
         {/* Image + Form */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
 
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden border border-border shadow-md h-80 lg:h-full min-h-[320px]"
+            className="relative rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl min-h-[400px]"
           >
              <img
                 src={imgContato}
                 alt="Thiago Saldanha - Treino"
-                className="w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8">
+                <p className="text-2xl font-heading font-bold text-foreground drop-shadow-lg">
+                  Pronto para o próximo nível?
+                </p>
+              </div>
           </motion.div>
 
           {/* Form */}
@@ -132,64 +129,67 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="bg-background border border-border rounded-2xl p-8 shadow-sm h-full">
-              <h3 className="font-heading font-bold text-xl text-foreground mb-6">Envie uma mensagem</h3>
+            <div className="glass-dark border border-white/5 rounded-[2.5rem] p-8 md:p-10 h-full shadow-2xl">
+              <h3 className="font-heading font-bold text-2xl text-foreground mb-8">Mande um oi!</h3>
 
               {sent ? (
-                <div className="flex flex-col items-center justify-center text-center py-16 gap-4">
-                  <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <MessageCircle size={32} className="text-secondary" />
+                <div className="flex flex-col items-center justify-center text-center py-20 gap-6">
+                  <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center animate-bounce">
+                    <MessageCircle size={40} className="text-primary" />
                   </div>
-                  <p className="font-semibold text-foreground text-lg">Mensagem enviada!</p>
-                  <p className="text-muted-foreground text-sm">Você foi redirecionado para o WhatsApp.</p>
+                  <div>
+                    <p className="font-heading font-bold text-2xl text-foreground mb-2">Mensagem enviada!</p>
+                    <p className="text-foreground/50 text-sm">Estou te esperando no WhatsApp.</p>
+                  </div>
                   <button
                     onClick={() => setSent(false)}
-                    className="mt-2 text-primary text-sm underline underline-offset-4 hover:text-primary/80 transition-colors"
+                    className="text-primary font-bold text-sm hover:underline underline-offset-8 transition-all"
                   >
                     Enviar outra mensagem
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Nome</label>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-[0.2em] ml-2">Nome Completo</label>
                     <input
                       type="text"
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm transition"
-                      placeholder="Seu nome completo"
+                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-300"
+                      placeholder="Como posso te chamar?"
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">E-mail</label>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-[0.2em] ml-2">E-mail</label>
                     <input
                       type="email"
                       required
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm transition"
+                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-300"
                       placeholder="seu@email.com"
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Mensagem</label>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-[0.2em] ml-2">Sua Mensagem</label>
                     <textarea
                       required
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm resize-none transition"
-                      placeholder="Como posso te ajudar?"
+                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-300 resize-none"
+                      placeholder="Em que posso te ajudar hoje?"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm shadow-lg shadow-primary/20"
+                    className="w-full group relative flex items-center justify-center gap-3 bg-primary text-primary-foreground font-bold py-5 rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-primary/20"
                   >
-                    <MessageCircle size={18} />
-                    Enviar via WhatsApp
+                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                    <MessageCircle size={22} className="relative z-10" />
+                    <span className="relative z-10 text-lg">Enviar via WhatsApp</span>
                   </button>
                 </form>
               )}

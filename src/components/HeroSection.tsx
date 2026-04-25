@@ -19,7 +19,12 @@ const HeroSection = () => (
       >
         <source src={videoBg} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent z-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)] opacity-60 z-10" />
+      <div 
+        className="absolute inset-0 z-[11] opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 0)', backgroundSize: '40px 40px' }}
+      />
     </div>
 
     {/* Logo — top right, md+ only */}
@@ -57,17 +62,19 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-foreground leading-tight mb-5"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-foreground leading-[1.1] mb-6"
         >
-          Alcançe sua melhor versão com{" "}
-          <span className="text-primary">treinamento de verdade</span>
+          Alcance sua melhor versão com{" "}
+          <span className="text-gradient-red drop-shadow-[0_0_15px_rgba(var(--primary),0.3)]">
+            treinamento de verdade
+          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-base md:text-lg lg:text-xl text-foreground/80 mb-8 max-w-lg"
+          className="text-lg md:text-xl text-foreground/70 mb-10 max-w-lg leading-relaxed"
         >
           Treinamento especializado em musculação e boxe, presencial ou consultoria online, focado nos seus resultados.
         </motion.p>
@@ -76,22 +83,23 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col sm:flex-row gap-3"
+          className="flex flex-col sm:flex-row gap-4"
         >
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm sm:text-base px-6 py-3.5 rounded-lg hover:bg-primary/90 transition-colors shadow-lg"
+            className="group relative inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base px-8 py-4 rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(var(--primary),0.3)]"
           >
-            <MessageCircle size={18} />
-            Agendar Treino
+            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            <MessageCircle size={20} className="relative z-10" />
+            <span className="relative z-10">Agendar Treino</span>
           </a>
           <a
             href="https://app.personalsaldanha.com.br/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 border-2 border-secondary/30 text-secondary font-semibold text-sm sm:text-base px-6 py-3.5 rounded-lg hover:bg-secondary/10 transition-colors"
+            className="inline-flex items-center justify-center gap-2 border border-white/10 bg-white/5 backdrop-blur-sm text-foreground font-bold text-base px-8 py-4 rounded-full hover:bg-white/10 transition-all hover:border-white/20 active:scale-95"
           >
             Acessar Plataforma
           </a>
@@ -105,9 +113,12 @@ const HeroSection = () => (
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.2 }}
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground/60 animate-bounce"
+      className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/40 hover:text-primary transition-colors animate-bounce"
     >
-      <ChevronDown size={32} />
+      <div className="flex flex-col items-center gap-2">
+        <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll</span>
+        <ChevronDown size={24} />
+      </div>
     </motion.a>
   </section>
 );
