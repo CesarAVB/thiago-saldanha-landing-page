@@ -67,7 +67,7 @@ const ServicesSection = () => (
             {/* Subtle Hover Halo effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-br from-primary/20 to-secondary/10 rounded-[2rem] opacity-0 group-hover:opacity-100 blur-md transition duration-500" />
             
-            <div className="relative h-full glass-dark border border-white/5 rounded-[2rem] p-8 flex flex-col transition-all duration-500 group-hover:translate-y-[-8px] group-hover:border-primary/20">
+            <div className="relative h-full bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 flex flex-col transition-all duration-500 group-hover:translate-y-[-8px] group-hover:border-primary/50 shadow-2xl">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 relative">
                 <div className="absolute inset-0 bg-primary/5 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                 <s.icon size={32} className="text-primary relative z-10 transition-transform duration-500 group-hover:scale-110" />
