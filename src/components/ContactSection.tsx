@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Instagram, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 import imgContato from "@/assets/perfil2.jpeg";
 
-const WHATSAPP_URL = "https://wa.me/5521969886804?text=Olá!%20Meu nome é ${form.name}. Email: ${form.email}. ${form.message}";
+const WHATSAPP_URL = "https://wa.me/5521969886804?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20consultorias%20e%20treinos.";
 
 const contactCards = [
   {
@@ -49,32 +49,32 @@ const ContactSection = () => {
 
   return (
     <section id="contato" className="py-24 lg:py-36 relative overflow-hidden">
-      {/* Decorative backgrounds */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(var(--primary),0.03)_0%,transparent_70%)] pointer-events-none" />
+      {/* Glow Effects */}
+      <div className="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
 
-        {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 lg:mb-24">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-secondary font-bold text-sm uppercase tracking-[0.4em]"
           >
-            Contato
+            Networking
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-heading font-bold text-foreground mt-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-4 uppercase tracking-tight"
           >
             Vamos começar sua <span className="text-primary">jornada</span>?
           </motion.h2>
         </div>
 
-        {/* Contact cards - NEW VISUAL */}
+        {/* Contact cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {contactCards.map(({ icon: Icon, label, value, href, external }, i) => (
             <motion.a
@@ -86,7 +86,7 @@ const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative overflow-hidden bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-8 transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 shadow-2xl"
+              className="group relative bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-8 transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 shadow-2xl"
             >
               <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:text-white text-primary">
@@ -95,106 +95,126 @@ const ContactSection = () => {
                 <h4 className="font-heading font-bold text-xl text-foreground mb-2 tracking-wide uppercase">{label}</h4>
                 <p className="text-foreground/60 text-xs font-medium">{value}</p>
               </div>
-              
-              {/* Subtle hover light effect */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             </motion.a>
           ))}
         </div>
 
-        {/* Image + Form */}
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
 
-          {/* Image */}
+          {/* Reimagined Photo Section */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl min-h-[400px]"
+            className="lg:col-span-5 relative"
           >
-             <img
+            <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden group shadow-2xl">
+              <img
                 src={imgContato}
-                alt="Thiago Saldanha - Treino"
-                className="absolute inset-0 w-full h-full object-cover"
+                alt="Thiago Saldanha"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <p className="text-2xl font-heading font-bold text-foreground drop-shadow-lg uppercase tracking-tight">
-                  Pronto para o próximo nível?
-                </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
+              
+              {/* Floating info badge */}
+              <div className="absolute bottom-10 left-10 right-10 p-6 glass rounded-3xl border-white/10">
+                <p className="font-heading font-bold text-2xl text-white mb-1 uppercase">Saldanha Team</p>
+                <p className="text-white/70 text-sm font-medium">Junte-se à elite do treinamento.</p>
               </div>
+            </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 border-2 border-primary/30 rounded-full animate-pulse pointer-events-none" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
           </motion.div>
 
-          {/* Form */}
+          {/* Reimagined Form Section */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="lg:col-span-7"
           >
-            <div className="glass-dark border border-white/5 rounded-[2.5rem] p-8 md:p-10 h-full shadow-2xl">
-              <h3 className="font-heading font-bold text-2xl text-foreground mb-8 uppercase tracking-wide">Mande um oi!</h3>
-
-              {sent ? (
-                <div className="flex flex-col items-center justify-center text-center py-20 gap-6">
-                  <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center animate-bounce">
-                    <MessageCircle size={40} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-heading font-bold text-2xl text-foreground mb-2">Mensagem enviada!</p>
-                    <p className="text-foreground/50 text-sm">Estou te esperando no WhatsApp.</p>
-                  </div>
-                  <button
-                    onClick={() => setSent(false)}
-                    className="text-primary font-bold text-sm hover:underline underline-offset-8 transition-all"
-                  >
-                    Enviar outra mensagem
-                  </button>
+            <div className="relative p-1 bg-gradient-to-br from-primary/30 to-secondary/10 rounded-[3rem]">
+              <div className="bg-zinc-950 rounded-[2.9rem] p-10 md:p-14 shadow-2xl">
+                <div className="mb-10">
+                  <h3 className="text-3xl font-heading font-bold text-foreground mb-4 uppercase tracking-wider">
+                    Solicite sua <span className="text-gradient-red">Consultoria</span>
+                  </h3>
+                  <p className="text-foreground/50 text-base leading-relaxed">
+                    Preencha os dados abaixo e eu entrarei em contato diretamente pelo seu WhatsApp para alinharmos seus objetivos.
+                  </p>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-[0.2em] ml-2">Nome Completo</label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-300"
-                      placeholder="Como posso te chamar?"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-[0.2em] ml-2">E-mail</label>
-                    <input
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-300"
-                      placeholder="seu@email.com"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-[0.2em] ml-2">Sua Mensagem</label>
-                    <textarea
-                      required
-                      rows={4}
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all duration-300 resize-none"
-                      placeholder="Em que posso te ajudar hoje?"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full group relative flex items-center justify-center gap-3 bg-primary text-primary-foreground font-bold py-5 rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-primary/20"
+
+                {sent ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center text-center py-10 gap-6"
                   >
-                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    <MessageCircle size={22} className="relative z-10" />
-                    <span className="relative z-10 text-lg uppercase">Enviar via WhatsApp</span>
-                  </button>
-                </form>
-              )}
+                    <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Send size={40} className="text-primary animate-pulse" />
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-2xl text-foreground mb-2">Mensagem Enviada!</h4>
+                      <p className="text-foreground/50">Redirecionando para o WhatsApp...</p>
+                    </div>
+                    <button
+                      onClick={() => setSent(false)}
+                      className="text-primary font-bold hover:underline underline-offset-8"
+                    >
+                      Enviar novo formulário
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] ml-1">Nome</label>
+                        <input
+                          type="text"
+                          required
+                          value={form.name}
+                          onChange={(e) => setForm({ ...form, name: e.target.value })}
+                          className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300"
+                          placeholder="Ex: João Silva"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] ml-1">E-mail</label>
+                        <input
+                          type="email"
+                          required
+                          value={form.email}
+                          onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300"
+                          placeholder="Ex: joao@email.com"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] ml-1">Mensagem (Opcional)</label>
+                      <textarea
+                        rows={3}
+                        value={form.message}
+                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                        className="w-full bg-zinc-900/50 border-b border-white/10 px-0 py-4 text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary transition-all duration-300 resize-none"
+                        placeholder="Conte brevemente seu objetivo..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="group relative w-full flex items-center justify-center gap-4 bg-primary text-white font-bold py-6 rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-95 shadow-[0_20px_40px_-15px_rgba(var(--primary),0.5)]"
+                    >
+                      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                      <MessageCircle size={22} className="relative z-10" />
+                      <span className="relative z-10 text-lg uppercase tracking-widest">Iniciar Transformação</span>
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
