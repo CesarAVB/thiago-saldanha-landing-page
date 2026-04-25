@@ -7,20 +7,20 @@ const services = [
     title: "Personal Trainer",
     description:
       "Treinos individualizados de musculação com acompanhamento presencial focado na execução correta e nos seus objetivos específicos.",
-    benefits: ["Ganho de massa muscular", "Emagrecimento", "Correção postural"],
+    benefits: ["Avaliação Física", "Ganho de massa muscular", "Emagrecimento", "Correção postural"],
   },
   {
     icon: Target,
     title: "Treinador de Boxe (FPERJ)",
     description:
-      "Aulas de boxe técnico e condicionamento físico baseadas na metodologia FPERJ, adequadas para todos os níveis.",
+      "Aulas de boxe técnico e condicionamento físico baseadas na metodologia do mestre Fábio Campos (FC Fight Company), adequadas para todos os níveis.",
     benefits: ["Condicionamento cardiovascular", "Técnica e defesa pessoal", "Alívio do estresse"],
   },
   {
     icon: Activity,
     title: "Personal Fight",
     description:
-      "Treinamento personalizado que une os benefícios das artes marciais (boxe) com preparação física de alto rendimento.",
+      "Treinamento personalizado que une os benefícios da Nobre arte (boxe) com preparação física de alto rendimento.",
     benefits: ["Treino dinâmico", "Gasto calórico elevado", "Coordenação motora"],
   },
   {

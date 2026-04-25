@@ -63,11 +63,11 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-xs uppercase tracking-widest text-muted-foreground mb-3 md:mb-5">Contato</h4>
           <div className="space-y-2 md:space-y-3">
-            <a href="mailto:saldanha.work@gmail.com" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
+            <a href="mailto:personal.saldanha@gmail.com" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
               <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center transition-colors flex-shrink-0">
                 <Mail size={13} />
               </div>
-              <span className="truncate">saldanha.work@gmail.com</span>
+              <span className="truncate">personal.saldanha@gmail.com</span>
             </a>
             <a href="https://wa.me/5521969886804" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs md:text-sm text-foreground/70 hover:text-primary transition-colors group">
               <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-foreground/5 group-hover:bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors flex-shrink-0">

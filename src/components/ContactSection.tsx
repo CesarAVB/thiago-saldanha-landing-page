@@ -16,8 +16,8 @@ const contactCards = [
   {
     icon: Mail,
     label: "E-mail",
-    value: "saldanha.work@gmail.com",
-    href: "mailto:saldanha.work@gmail.com",
+    value: "personal.saldanha@gmail.com",
+    href: "mailto:personal.saldanha@gmail.com",
     external: false,
   },
   {

@@ -3,17 +3,17 @@ import { Award, GraduationCap, Heart } from "lucide-react";
 import fotoPerfil from "@/assets/perfil1.jpeg";
 
 const stats = [
-  { 
-    icon: Award, 
-    label: "FPERJ", 
+  {
+    icon: Award,
+    label: "FPERJ",
     sub: "Treinador de Boxe Registrado",
-    detail: "Certificação oficial pela Federação de Boxe do Estado do Rio de Janeiro."
+    detail: "Registro FPERJ - 20220126 · Federação Estadual de Esporte Socioeducativo e Pugilismo do Rio de Janeiro RJ."
   },
-  { 
-    icon: GraduationCap, 
-    label: "Especialista", 
-    sub: "Educação Física e Personal Fight",
-    detail: "Especialização focada em alta performance e metodologia de combate."
+  {
+    icon: GraduationCap,
+    label: "Formação",
+    sub: "Profissional de Educação Física desde 2018",
+    detail: "CREF - RJ-048984. Especialização focada em alta performance e metodologia de combate."
   },
   { 
     icon: Heart, 
